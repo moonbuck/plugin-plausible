@@ -1,0 +1,15 @@
+{
+    "version": "1.0.0",
+    "title": "Moondeer's Plausible Analytics",
+    "description": "Plausible Analytics script injection plus a page for toggling visit exclusion.",
+    "includes": [
+        "plausible-analytics-script.html"
+    ],
+    "fields": [
+        {
+            "field": "params.registered_domain",
+            "label": "Registered Domain",
+            "placeholder": "Domain registered with Plausible Analytics."
+        }
+    ]
+}
