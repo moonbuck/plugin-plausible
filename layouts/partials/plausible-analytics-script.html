@@ -1,10 +1,11 @@
-{{- $script_source := .Site.Params.script_source | default "https://plausible.io/js/" -}}
-{{ printf "<!-- $script_source = %s -->" $script_source | safeHTML }}
-{{- $script_name := .Site.Params.script_name | default "plausible.js" -}}
-{{- $script_ext := path.Ext $script_name -}}
-{{- $script_name = strings.TrimSuffix $script_ext $script_name -}}
-{{- $script_ext := strings.TrimPrefix "." $script_ext -}}
-{{- $script_extensions := .Site.Params.script_extensions | default "" -}}
-{{- $script_name = delimit (cond (eq "" $script_extensions) (slice $script_name $script_ext) (slice $script_name $script_extensions $script_ext)) "." -}}
-{{- $src := path.Join $script_source $script_name -}}
-<script async defer data-domain="{{ .Site.Params.registered_domain }}" src="{{ $src | safeHTMLAttr }}"></script>
+{{- $domain := .Site.Params.plausible_registered_domain -}}
+{{- $source := .Site.Params.plausible_script_source | default "https://plausible.io/js/" -}}
+{{- $name := .Site.Params.plausible_script_name | default "plausible.js" -}}
+{{- $ext := path.Ext $name -}}
+{{- $name = strings.TrimSuffix $ext $name -}}
+{{- $ext = strings.TrimPrefix "." $ext -}}
+{{- $extensions := .Site.Params.plausible_script_extensions -}}
+{{- $name = delimit (cond (eq "" $extensions) (slice $name $ext) (slice $name $extensions $ext)) "." -}}
+{{- $data_api := .Site.Params.plausible_data_api -}}
+{{- $src := path.Join $source $name -}}
+<script async defer data-domain="{{ $domain }}" {{ with $data_api }}data-api="{{ $data_api }}" src="{{ $src }}"></script>

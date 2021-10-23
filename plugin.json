@@ -7,24 +7,29 @@
     ],
     "fields": [
         {
-            "field": "params.registered_domain",
+            "field": "params.plausible_registered_domain",
             "label": "Registered Domain",
             "placeholder": "Domain registered with Plausible Analytics."
         },
         {
-            "field": "params.script_extensions",
+            "field": "params.plausible_script_extensions",
             "label": "Script Extensions",
-            "placeholder": "Optional extensions to include when fetching Plausible script (i.e. hash.exclusions.outbound-link) (default is '')"
+            "placeholder": "Optional extensions to include when fetching Plausible script"
         },
         {
-          "field": "params.script_name",
+          "field": "params.plausible_script_name",
           "label": "Script Name",
-          "placeholder": "Optional script name without script extensions aside from '.js' (i.e. Cloudflare worker expecting 'script.js') (default is 'plausible.js')"
+          "placeholder": "Optional script name without script extensions aside from '.js'"
         },
         {
-          "field": "params.script_source",
+          "field": "params.plausible_script_source",
           "label": "Script Source",
-          "placeholder": "Optional script source (i.e. Cloudflare worker such as 'https://your-worker-name.your-cloudflare-username.workers.dev/js/') (default is 'https://plausible.io/js/')"
+          "placeholder": "Optional script source"
+        },
+        {
+          "field": "params.plausible_data_api",
+          "label": "Data API",
+          "placeholder": "Optional data-api value"
         }
     ]
 }
