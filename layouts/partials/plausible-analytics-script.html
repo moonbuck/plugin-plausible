@@ -8,4 +8,4 @@
 {{- $name = delimit (cond (eq "" $extensions) (slice $name $ext) (slice $name $extensions $ext)) "." -}}
 {{- $data_api := .Site.Params.plausible_data_api -}}
 {{- $src := printf "%s%s" $source $name -}}
-<script async defer data-domain="{{ $domain }}" {{ with $data_api }}data-api="{{ $data_api }}" src="{{ $src }}"></script>
+<script async defer data-domain="{{ $domain }}" {{ with $data_api }}data-api="{{ $data_api }}" {{ end }}src="{{ $src }}"></script>
