@@ -4,6 +4,6 @@
 {{- $script_name = strings.TrimSuffix $script_ext $script_name -}}
 {{- $script_ext := strings.TrimPrefix "." $script_ext -}}
 {{- $script_extensions := .Site.Params.script_extensions | default "" -}}
-{{- $script_name = delimit (cond (gt 0 (len $script_extensions)) (slice $script_name $script_extensions $script_ext) (slice $script_name $script_ext)) "." -}}
+{{- $script_name = delimit (cond (eq "" $script_extensions) (slice $script_name $script_ext) (slice $script_name $script_extensions $script_ext)) "." -}}
 {{- $src := path.Join $script_source $script_name -}}
 <script async defer data-domain="{{ .Site.Params.registered_domain }}" src="{{ $src }}"></script>
