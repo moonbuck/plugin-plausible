@@ -1,4 +1,13 @@
 section#plausible-exclusion {
   max-width: 600px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+div#plausible-button-wrapper {
   margin: auto;
 }
