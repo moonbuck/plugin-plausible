@@ -1,10 +1,10 @@
-{{- $domain := site.Params.plausible_registered_domain -}}
+{{- $domain := site.Params.plausible_registered_domain | default (urls.Parse site.BaseURL).Host -}}
 {{- $source := site.Params.plausible_script_source | default "https://plausible.io/js/" -}}
 {{- $name := site.Params.plausible_script_name | default "plausible.js" -}}
 {{- $ext := path.Ext $name -}}
 {{- $name = strings.TrimSuffix $ext $name -}}
 {{- $ext = strings.TrimPrefix "." $ext -}}
-{{- $extensions := site.Params.plausible_script_extensions -}}
+{{- $extensions := site.Params.plausible_script_extensions | default "" -}}
 {{- $name = delimit (cond (eq "" $extensions) (slice $name $ext) (slice $name $extensions $ext)) "." -}}
 {{- $data_api := site.Params.plausible_data_api -}}
 {{- $src := printf "%s%s" $source $name -}}
