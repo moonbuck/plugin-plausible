@@ -3,7 +3,8 @@
     "title": "Moondeer's Plausible Analytics",
     "description": "Plausible Analytics script injection plus a page for toggling visit exclusion.",
     "includes": [
-        "plausible-analytics-script.html"
+        "plausible-analytics-script.html",
+        "/assets/css/plausible.css"
     ],
     "fields": [
         {

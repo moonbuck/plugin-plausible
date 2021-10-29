@@ -1,15 +1,15 @@
 {{/* Code provided by Plausible Analytics */}}
 {{ define "main" }}
-<article>
+<section id="plausible-exclusion">
 <p>
-Click the button below to toggle your exclusion in analytics for this site. 
+Click the button below to toggle whether your visits to the site are to be excluded by Plausible Analytics. 
 You currently <span id="plausible_not">are not</span><span id="plausible_yes">are</span> excluding your visits.
 </p>
 
 <p> 
 <a id="plausible_button" href="javascript:toggleExclusion()">Exclude my visits</a>
 </p>
-</article>
+</section>
 <script>
     window.addEventListener('load', function (e) {
       var exclusionState = window.localStorage.plausible_ignore == "true"

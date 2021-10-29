@@ -1,11 +1,17 @@
-{{- $domain := .Site.Params.plausible_registered_domain -}}
-{{- $source := .Site.Params.plausible_script_source | default "https://plausible.io/js/" -}}
-{{- $name := .Site.Params.plausible_script_name | default "plausible.js" -}}
+{{- $domain := site.Params.plausible_registered_domain -}}
+{{- $source := site.Params.plausible_script_source | default "https://plausible.io/js/" -}}
+{{- $name := site.Params.plausible_script_name | default "plausible.js" -}}
 {{- $ext := path.Ext $name -}}
 {{- $name = strings.TrimSuffix $ext $name -}}
 {{- $ext = strings.TrimPrefix "." $ext -}}
-{{- $extensions := .Site.Params.plausible_script_extensions -}}
+{{- $extensions := site.Params.plausible_script_extensions -}}
 {{- $name = delimit (cond (eq "" $extensions) (slice $name $ext) (slice $name $extensions $ext)) "." -}}
-{{- $data_api := .Site.Params.plausible_data_api -}}
+{{- $data_api := site.Params.plausible_data_api -}}
 {{- $src := printf "%s%s" $source $name -}}
-<script async defer data-domain="{{ $domain }}" {{ with $data_api }}data-api="{{ $data_api }}" {{ end }}src="{{ $src }}"></script>
+<script 
+  async 
+  defer 
+  data-domain="{{ $domain }}" 
+  {{ with $data_api -}}data-api="{{ $data_api }}" {{- end }}
+  src="{{ $src }}"
+></script>
