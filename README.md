@@ -1,4 +1,4 @@
-# plugin-plausible
+# plugin-plausible-plus
 A plugin for [Micro.blog](https://micro.blog "Micro.blog") for adding [Plausible Analytics](https://plausible.io/docs/ "Plausible Analytics Docs").
 
 Inspired by the [existing plugin](https://github.com/LukasRos/plugin-plausible "plugin-plausible"), this plugin performs the same script injection function and adds a few bells and whistles. The first of which is the creation of a page (made availlable at `[SCHEME]://[HOSTNAME]/plausible/`) providing a toggle for excluding visits. As the [Plausible doc](https://plausible.io/docs/excluding-localstorage#to-exclude-your-visits-from-being-counted "Excluding Your Visits from Being Counted") states, every browser will have its own setting. Want to stop being counted when you click on your Twitter Card? Click on that card, navigate to the generated page, and click/touch the button. 
