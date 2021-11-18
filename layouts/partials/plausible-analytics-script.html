@@ -6,7 +6,7 @@
 {{- $ext = strings.TrimPrefix "." $ext }}
 {{- $extensions := (site.Data.plugin_plausible_plus_params.ScriptExtensions | default site.Params.plausible_script_extensions) | default "" }}
 {{- $name = delimit (cond (eq "" $extensions) (slice $name $ext) (slice $name $extensions $ext)) "." }}
-{{- $data_api := (site.Data.plugin_plausible_plus_params.DataAPI | default site.Params.plausible_data_api }}
+{{- $data_api := site.Data.plugin_plausible_plus_params.DataAPI | default site.Params.plausible_data_api }}
 {{- $src := printf "%s%s" $source $name }}
 <script 
   async 
