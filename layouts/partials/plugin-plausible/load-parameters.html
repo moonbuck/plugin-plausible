@@ -43,8 +43,9 @@
 {{- $name = delimit (slice $name 
             | append $Parameters.Config.ScriptExtensions
             | append $ext) "." -}}
+{{- $name = replace $name "..." "." -}}
             
-{{- $src := printf "%s%s" $source $name -}}
+{{- $src := printf "%s%s" $Parameters.Config.ScriptSource $name -}}
 
 {{- $Parameters = merge $Parameters (dict (slice "Config" "Src") $src) -}}
 

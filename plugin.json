@@ -1,5 +1,5 @@
 {
-    "version": "3.0.0",
+    "version": "3.0.1",
     "title": "Moondeer's Plausible Analytics",
     "description": "Plausible Analytics script injection plus a page for toggling visit exclusion.",
     "includes": [ "plugin-plausible/injection.html" ]

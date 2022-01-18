@@ -1,5 +1,5 @@
 {{/* Load the config file values into the scratch */}}
-{{- partial "plugin-plausible/load-parameters.html" . -}}
+{{ partial "plugin-plausible/load-parameters.html" . -}}
 
 {{- with .Scratch.Get "plugin-plausible.Parameters" -}}
 
@@ -10,11 +10,12 @@
 {{/* Insert the plugin version and build time */}}
 {{- $time := (time (sub now.Unix 28800)).Format "Jan 2 at 15:04" -}}
 {{- $version := .Config.Version -}}
-{{ printf "\n<!-- Plausible v%s (built on %s) -->\n" $version $time | safeHTML }}
+{{- printf "\n<!-- Plausible v%s (built on %s) -->\n" $version $time | safeHTML -}}
 
 <script async 
   defer 
   data-domain="{{ .Config.RegisteredDomain }}" 
   {{ with .Config.DataAPI }} data-api="{{ . }}" {{ end }}
-  src="{{ .Conif.Src }}"
+  src="{{ .Config.Src }}"
 ></script>
+{{- end }}

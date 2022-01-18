@@ -1,6 +1,6 @@
 # Plugin version, printed to HTML comment when the plugin loads.
 #
-Version = '3.0.0'
+Version = '3.0.1'
 
 # Whether to print HTML comments for debugging purposes.
 #
