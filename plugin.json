@@ -1,36 +1,6 @@
 {
-    "version": "2.0.0",
+    "version": "3.0.0",
     "title": "Moondeer's Plausible Analytics",
     "description": "Plausible Analytics script injection plus a page for toggling visit exclusion.",
-    "includes": [
-        "plausible-analytics-script.html",
-        "/assets/css/plausible.css"
-    ],
-    "fields": [
-        {
-            "field": "params.plausible_registered_domain",
-            "label": "Registered Domain",
-            "placeholder": "Domain registered with Plausible Analytics."
-        },
-        {
-            "field": "params.plausible_script_extensions",
-            "label": "Script Extensions",
-            "placeholder": "Optional extensions to include when fetching Plausible script"
-        },
-        {
-          "field": "params.plausible_script_name",
-          "label": "Script Name",
-          "placeholder": "Optional script name without script extensions aside from '.js'"
-        },
-        {
-          "field": "params.plausible_script_source",
-          "label": "Script Source",
-          "placeholder": "Optional script source"
-        },
-        {
-          "field": "params.plausible_data_api",
-          "label": "Data API",
-          "placeholder": "Optional data-api value"
-        }
-    ]
+    "includes": [ "plugin-plausible/injection.html" ]
 }
