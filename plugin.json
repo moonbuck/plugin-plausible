@@ -1,6 +1,6 @@
 {
     "version": "3.0.1",
     "title": "Moondeer's Plausible Analytics",
-    "description": "Plausible Analytics script injection plus a page for toggling visit exclusion. An updated README is on the way. See the documented configuration files in the plugin's data directory for plugin parameters and feel free to holler at me with any questions.",
+    "description": "Plausible Analytics script injection plus a page for toggling visit exclusion.  Details on configuring plugin parameters may be found <a href='https://moondeer.blog/2022/02/10/pluginplausible-a-readme.html'>here</a>",
     "includes": [ "plugin-plausible/injection.html" ]
 }
